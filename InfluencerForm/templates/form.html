@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loom Abayas – Collaboration Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="form-container fade-in">
+    <div class="welcome">
+      <h2>Ahlan, &amp; Welcome to Loom Abaya’s Creator Community!</h2>
+      <p>We’re building a beautiful close-knit circle of content creators and influencers who align with our brand’s vision—elegance, authenticity and effortless modesty.</p>
+      <p>If you are passionate about modest fashion and aesthetic content creation, we’d love to have you in our creator circle ❤️</p>
+      <p class="italic">Please take a moment to fill in your details so that we can reach out when the right opportunity arises, Inshaa’ Allah.</p>
+    </div>
+
+    <form method="POST">
+      <div class="form-group"><label for="full_name">Full Name</label><input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required></div>
+      <div class="form-group"><label for="country">Country</label><input type="text" id="country" name="country" placeholder="Enter your country" required></div>
+      <div class="form-group"><label for="state">State</label><input type="text" id="state" name="state" placeholder="Enter your state" required></div>
+      <div class="form-group"><label for="city">City</label><input type="text" id="city" name="city" placeholder="Enter your city" required></div>
+
+      <div class="form-group">
+        <label for="abaya_size">Abaya Size</label>
+        <select id="abaya_size" name="abaya_size" required>
+          <option value="">Select Abaya Size</option>
+          <option value="52">52</option>
+          <option value="54">54</option>
+          <option value="56">56</option>
+          <option value="58">58</option>
+          <option value="60">60</option>
+          <option value="custom">Custom Size</option>
+        </select>
+      </div>
+
+      <div class="form-group fade-field" id="custom_size_field">
+        <label for="custom_size">Please specify your custom size</label>
+        <input type="text" id="custom_size" name="custom_size" placeholder="e.g., 53.5 or other details">
+      </div>
+
+      <div class="form-group"><label for="followers">Follower Count</label><input type="number" id="followers" name="followers" placeholder="e.g., 12000" required></div>
+      <div class="form-group"><label for="reel_views">Highest Reel View Count</label><input type="number" id="reel_views" name="reel_views" placeholder="e.g., 40000" required></div>
+      <div class="form-group"><label for="instagram_id">Instagram ID</label><input type="text" id="instagram_id" name="instagram_id" placeholder="@yourusername" required></div>
+      <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="Enter your email" required></div>
+      <div class="form-group"><label for="contact_number">Contact Number</label><input type="text" id="contact_number" name="contact_number" placeholder="Phone / WhatsApp" required></div>
+      <div class="form-group"><label for="queries">Queries</label><input type="text" id="queries" name="queries" placeholder="Any Queries"> </div>
+      <div class="form-group"><label for="days_required">Days Required for Content Output</label><input type="number" id="days_required" name="days_required" placeholder="e.g., 3" required></div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <a class="instagram-link" href="https://www.instagram.com/loom.abayas" target="_blank">
+        💌Follow us on Instagram @loom.abayas
+    </a>
+  </div>
+
+  <script>
+    const abayaSelect = document.getElementById("abaya_size");
+    const customField = document.getElementById("custom_size_field");
+    const customInput = document.getElementById("custom_size");
+
+    abayaSelect.addEventListener('change', function () {
+      if (this.value === 'custom') {
+        customField.classList.add('show');
+        customInput.setAttribute('required', 'required');
+      } else {
+        customField.classList.remove('show');
+        customInput.removeAttribute('required');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
